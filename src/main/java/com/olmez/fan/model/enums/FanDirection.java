@@ -2,10 +2,14 @@ package com.olmez.fan.model.enums;
 
 import lombok.Getter;
 
+/**
+ * It represents a ceiling fan direction. There are two ways settings as
+ * clockwise or counterclockwise.
+ */
 @Getter
 public enum FanDirection {
     CLOCKWISE("Clockwise"),
-    COUNTER_CLOCKWISE("Counter Clockwise");
+    COUNTERCLOCKWISE("Counterclockwise");
 
     private String label;
 

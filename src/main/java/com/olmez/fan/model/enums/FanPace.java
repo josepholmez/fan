@@ -1,7 +1,11 @@
-package com.olmez.fan.model;
+package com.olmez.fan.model.enums;
 
 import lombok.Getter;
 
+/**
+ * It represents a ceiling fan pace. There are 3-speed settings and an “off”
+ * (speed 0) setting.
+ */
 @Getter
 public enum FanPace {
     OFF("Off", 0),

@@ -2,9 +2,9 @@ package com.olmez.fan.services.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.olmez.fan.model.FanPace;
-import com.olmez.fan.model.enums.CeilingFan;
+import com.olmez.fan.model.CeilingFan;
 import com.olmez.fan.model.enums.FanDirection;
+import com.olmez.fan.model.enums.FanPace;
 import com.olmez.fan.services.CeilingFanService;
 
 @Service
@@ -62,7 +62,7 @@ public class CeilingFanServiceImpl implements CeilingFanService {
         if (direction == null) {
             return FanDirection.CLOCKWISE;
         }
-        return (direction == FanDirection.CLOCKWISE) ? FanDirection.COUNTER_CLOCKWISE : FanDirection.CLOCKWISE;
+        return (direction == FanDirection.CLOCKWISE) ? FanDirection.COUNTERCLOCKWISE : FanDirection.CLOCKWISE;
     }
 
 }

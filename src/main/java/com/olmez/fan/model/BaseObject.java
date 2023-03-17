@@ -7,6 +7,12 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * When it is desired to create new objects, "id", and "deleted" fields are
+ * defined in this class in order to reduce boilerplate code crowd. Deleting
+ * objects in the database is generally not desired. Therefore, "deleted" is set
+ * as {@code true} for deleted objects.
+ */
 @MappedSuperclass
 @Getter
 @Setter

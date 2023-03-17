@@ -7,9 +7,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.olmez.fan.model.FanPace;
-import com.olmez.fan.model.enums.CeilingFan;
+import com.olmez.fan.model.CeilingFan;
 import com.olmez.fan.model.enums.FanDirection;
+import com.olmez.fan.model.enums.FanPace;
 import com.olmez.fan.services.impl.CeilingFanServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
@@ -74,7 +74,7 @@ class CeilingFanServiceImplTest {
         // act
         var retFan = fanService.pullCord2(fan);
         // assert
-        assertThat(retFan.getDirection()).isEqualTo(FanDirection.COUNTER_CLOCKWISE);
+        assertThat(retFan.getDirection()).isEqualTo(FanDirection.COUNTERCLOCKWISE);
     }
 
     @Test
@@ -84,7 +84,7 @@ class CeilingFanServiceImplTest {
         // act (clockwise -> counter clockwise)
         var restFan = fanService.pullCord2(fan);
         // assert
-        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTER_CLOCKWISE);
+        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTERCLOCKWISE);
 
         // try again (counter clockwise -> clockwise)
         restFan = fanService.pullCord2(restFan);
@@ -92,7 +92,7 @@ class CeilingFanServiceImplTest {
 
         // try again (clockwise -> counter clockwise)
         restFan = fanService.pullCord2(restFan);
-        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTER_CLOCKWISE);
+        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTERCLOCKWISE);
     }
 
     @Test
@@ -109,12 +109,12 @@ class CeilingFanServiceImplTest {
         // pull cord2
         restFan = fanService.pullCord2(restFan);
         assertThat(restFan.getPace()).isEqualTo(FanPace.HIGH);
-        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTER_CLOCKWISE);
+        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTERCLOCKWISE);
 
         // pull cord1
         restFan = fanService.pullCord1(restFan);
         assertThat(restFan.getPace()).isEqualTo(FanPace.OFF);
-        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTER_CLOCKWISE);
+        assertThat(restFan.getDirection()).isEqualTo(FanDirection.COUNTERCLOCKWISE);
 
         // pull cord2
         restFan = fanService.pullCord2(restFan);
