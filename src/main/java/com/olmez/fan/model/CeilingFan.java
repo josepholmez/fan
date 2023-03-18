@@ -7,6 +7,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 import com.olmez.fan.model.enums.FanDirection;
 import com.olmez.fan.model.enums.FanPace;
+import com.olmez.fan.utility.StringUtility;
 
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -21,11 +22,11 @@ public class CeilingFan extends BaseObject {
 
     private @Nullable String name;
     /**
-     * speed of ceiling fan (it can be 0-off, 1-low, 2-medium, 3-high)
+     * Speed of ceiling fan (it can be 0-off, 1-low, 2-medium, 3-high)
      */
     private FanPace pace = FanPace.OFF;
     /**
-     * direction of ceiling fan (it can be clockwise or counter clockwise)
+     * Direction of ceiling fan (it can be clockwise or counter clockwise)
      */
     private FanDirection direction = FanDirection.CLOCKWISE;
 
@@ -54,7 +55,7 @@ public class CeilingFan extends BaseObject {
 
     @Override
     public String toString() {
-        return (name == null || name.isEmpty()) ? "noname" : name;
+        return StringUtility.isEmpty(name) ? "noname" : name;
     }
 
 }

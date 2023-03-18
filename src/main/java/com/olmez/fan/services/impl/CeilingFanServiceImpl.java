@@ -20,10 +20,9 @@ public class CeilingFanServiceImpl implements CeilingFanService {
             return CeilingFan.stopFan(fan);
         }
 
-        var curPace = fan.getPace();
-        fan.setPace(increaseFanPace(curPace));
+        var currentPace = fan.getPace();
+        fan.setPace(increaseFanPace(currentPace));
         return fan;
-
     }
 
     @Override
@@ -36,8 +35,8 @@ public class CeilingFanServiceImpl implements CeilingFanService {
             return CeilingFan.stopFan(fan);
         }
 
-        var curDirection = fan.getDirection();
-        fan.setDirection(switchFanDirection(curDirection));
+        var currentDirection = fan.getDirection();
+        fan.setDirection(switchFanDirection(currentDirection));
         return fan;
     }
 
@@ -45,7 +44,6 @@ public class CeilingFanServiceImpl implements CeilingFanService {
         if (pace == null) {
             return FanPace.OFF;
         }
-
         switch (pace) {
             case OFF:
                 return FanPace.LOW;
@@ -60,7 +58,7 @@ public class CeilingFanServiceImpl implements CeilingFanService {
 
     private FanDirection switchFanDirection(FanDirection direction) {
         if (direction == null) {
-            return FanDirection.CLOCKWISE;
+            return null;
         }
         return (direction == FanDirection.CLOCKWISE) ? FanDirection.COUNTERCLOCKWISE : FanDirection.CLOCKWISE;
     }

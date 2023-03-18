@@ -21,17 +21,17 @@ class CeilingFanServiceImplTest {
     private CeilingFan fan;
 
     @Test
-    void testPullCord1_NoFan_ExpectedNull() {
-        assertThat(fanService.pullCord1(null)).isNull();
-    }
-
-    @Test
     void testDefaultCase_ExpectedPaceOffAndDirectionClockwise() {
         // arrange
         fan = new CeilingFan();
         // assert
         assertThat(fan.getPace()).isEqualTo(FanPace.OFF);
         assertThat(fan.getDirection()).isEqualTo(FanDirection.CLOCKWISE);
+    }
+
+    @Test
+    void testPullCord1_NoFan_ExpectedNull() {
+        assertThat(fanService.pullCord1(null)).isNull();
     }
 
     @Test
@@ -65,6 +65,11 @@ class CeilingFanServiceImplTest {
         // try again (3 -> 0)
         restFan = fanService.pullCord1(restFan);
         assertThat(restFan.getPace()).isEqualTo(FanPace.OFF);
+    }
+
+    @Test
+    void testPullCord2_NoDirection_ExpectedNull() {
+        assertThat(fanService.pullCord2(null)).isNull();
     }
 
     @Test
