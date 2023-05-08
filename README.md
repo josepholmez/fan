@@ -1,12 +1,10 @@
 # About
 
-This project was created by Joseph (Yusuf) Ölmez on March 17, 2023, as part of the job application process at Medavie Blue Cross.
-As the first step for the Full Stack Developer opportunity, the following assignment was requested to be codded.
-This project is the answer to this assignment.
+This project was created by Joseph on March 17, 2023, as part of the job application process.
 
 # Assigment
 
-From : Ankit Kalal (ankit.kalal@medavie.bluecross.ca)
+From : ?
 Date of Issue : March 17, 2023 10:33 AM
 Due Date : March 19, 2023 10:33 AM
 
@@ -18,18 +16,14 @@ In Java, implement a simple ceiling fan which has two pull cords and the followi
 · The ceiling fan should be “off” on December 25th all day even if the cords are pulled.
 · You can assume the unit is always powered (no wall switch)
 
-Assessment format: Please provide your project via a link to your public code repository.
-
-Please send your assessment results directly to ankit.kalal@medavie.bluecross.ca within 48 hours.
-
 # Repository
 
-- Owner: Joseph (Yusuf) Olmez
+- Owner: Joseph
 - Public access repository: https://bitbucket.org/josephpersonal/fan/src/main/
 
 # Note
 
-The MySQL database connection is disabled. Database usage, security, or frontend are not included in this project as they are not within the scope of the assignment.
+-The MySQL database connection is disabled. Database usage, security, or frontend are not included in this project as they are not within the scope of the assignment.
 
 # How do I create the project
 
@@ -53,7 +47,7 @@ The problem is to implement a Java program that simulates a ceiling fan with spe
 
 ## Design:
 
-• Service Layer design pattern was used.
+• Data Access Object (DAO) Design Pattern
 • BaseObject class: This class is the superclass which is used to reduce boilerplate code (id, deleted).
 • CeilingFan class: This class represents the state of the ceiling fan. It holds the status of the speed and direction of the fan. It also contains methods that check stop day and stop the fan. At first, it was assumed that CeilingFan objects would be stored in the database, then this was ignored.
 • Pace and Direction enum classes: These classes represent the speed and direction settings of the fan. The Speed class represents the speed settings from 0 to 3, while the Direction class represents the direction of the fan. These classes can use to change the state of the fan.
